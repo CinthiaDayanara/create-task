@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const taskRoutes = require('./routes/taskRoutes');
 const app = express();
-const port = 5009;
+const port = 5005;
 
 
 mongoose.connect('mongodb://localhost:27017/tasks_db', {
