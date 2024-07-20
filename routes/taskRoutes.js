@@ -2,12 +2,12 @@ const express = require('express');
 const router = express.Router();
 const Task = require('../models/task');
 
-// Crear una nueva tarea
+
 router.post('/api/tasks', async (req, res) => {
   try {
     const { title, description, status } = req.body;
 
-    // Crear una nueva tarea
+    
     const newTask = new Task({ title, description, status });
     await newTask.save();
 
