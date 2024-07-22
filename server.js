@@ -5,11 +5,14 @@ const taskRoutes = require('./routes/taskRoutes');
 const app = express();
 const port = 3008;
 
+const uri = 'mongodb+srv://admin:admin@cluster0.acc1is2.mongodb.net/task_db?retryWrites=true&w=majority&appName=Cluster0';;
 
-mongoose.connect('mongodb://localhost:27017/task_db', {
-    
-});
-
+mongoose.connect(uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+})
+.then(() => console.log('Conectado a MongoDB Atlas'))
+.catch((error) => console.error('Error al conectar a MongoDB Atlas:', error.message));
 
 app.use(cors({
   origin: '*',
